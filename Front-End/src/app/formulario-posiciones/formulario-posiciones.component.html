@@ -1,0 +1,80 @@
+<div class="centered-container">
+  <div class="mat-elevation-z3">
+    <form [formGroup]="formulario" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value)">
+      <table class="mat-table">
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <h1 class="titulo"><b>FORMULARIO DE CARGA DE POSICIONES</b></h1>
+            </td>
+          </tr>
+          <tr>
+            <td>Empresas</td>
+            <td>
+              <mat-form-field >
+                <mat-select placeholder="Empresa" [formControl]="empresaControl">
+                  <mat-option *ngFor="let empresa of empresas" [value]="empresa.id">{{empresa.razonSocial}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Productos</td>
+            <td>
+              <mat-form-field>
+                <mat-select placeholder="Productos" [formControl]="productoControl">
+                  <mat-option *ngFor="let producto of productos" [value]="producto.id">{{producto.nombre}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Fecha:</td>
+            <td>
+              <mat-form-field>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  placeholder="Seleccione una fecha"
+                  [formControl]="fechaControl"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <p style="margin-top: 0px; font-size: 11px; color: red;">*Selecciona una fecha mayor al dia actual</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Moneda</td>
+            <td>
+              <mat-form-field>
+                <mat-select placeholder="Moneda" [formControl]="monedaControl">
+                  <mat-option value="ARS">Pesos Argentinos</mat-option>
+                  <mat-option value="USD">Dolares</mat-option>
+                  <mat-option value="EUR">Euros</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Monto</td>
+            <td>
+              <mat-form-field>
+                <input matInput type="number" placeholder="Monto" [formControl]="montoControl"/>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button mat-flat-button color="primary" class="submit-button" type="submit">Submit</button>
+              <br /><br />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>

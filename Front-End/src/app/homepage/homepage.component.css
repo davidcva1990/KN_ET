@@ -1,0 +1,36 @@
+.hello-world {
+    background: #7a7a8a ; 
+    color: #fff;
+    text-align: center;
+    height: 93vh;
+
+}
+
+h3 {
+    font-weight: bolder;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .content {
+    vertical-align: center;
+  }
+
+  .kainet {
+    font-size: 96px;
+    font-weight: bold;
+  }
+  .kai {
+    color: #fff;
+  }
+  .net {
+    color: #00ff00;
+  }
